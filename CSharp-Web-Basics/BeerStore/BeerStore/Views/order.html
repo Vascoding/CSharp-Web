@@ -1,0 +1,54 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../Style/form.css" />
+    <link rel="stylesheet" href="../Style/style.css" />
+    <title>Order Beer</title>
+</head>
+<body>
+
+<nav>
+    <div class="topnav">
+        <a class="logo" href="index.html"><img src="../Images/logo.png"/></a>
+        <a href="index.html">Home</a>
+        <a href="all-beers.html">See All Beers</a>
+        <a class="active" href="order.html">Order a Beer</a>
+        <a class="right" href="register.html">Register</a>
+        <a class="right" href="login.html">Login</a>
+    </div>
+</nav>
+    <main>
+        <center>
+            <h1>Order a Beer</h1>
+            <br />
+            <form>
+                <label>Brand</label>
+                <select>
+                    <option selected disabled>Select a brand</option>
+                    <option>Corona Extra 330ml</option>
+                    <option>Stela Artois 500ml</option>
+                    <option>Carlsberg 330ml</option>
+                </select>
+                <label>Quantity</label>
+                <input type="number" min="1" max="15" placeholder="Enter amount of beers (1-15)"/>
+                <label>Destination</label>
+                <select>
+                    <option selected disabled>Select destination</option>
+                    <option>Sofia</option>
+                    <option>Plovdiv</option>
+                    <option>Varna</option>
+                    <option>Burgas</option>
+                    <option>Vidin</option>
+                </select>
+                <label>Enter your birthdate</label>
+                <input placeholder="mm/dd/yyyy" type="date">
+                <label>Got an opinion, comment, recommendation? Share it with us!</label>
+                <textarea type="textarea" placeholder="Share your opinion with us!" rows="4" cols="50"> 
+				</textarea>
+                <input type="submit" value="Order">
+            </form>
+        </center>
+    </main>
+</body>
+</html>

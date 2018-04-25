@@ -1,0 +1,12 @@
+﻿@model EditPartViewModel
+    <h2>Edit @Model.Name</h2>
+<form method="post">
+    <br />
+    <label for="Price">Price</label>
+    <input type="number" name="Price" id="Price" min="0.00" step="1.00"/>
+    <br />
+    <label for="Quantity">Quantity</label>
+    <input type="number" name="Quantity" id="Quantity" min="1" value="1" />
+    <br/>
+    <input type="submit" value="Edit Part" />
+</form>

@@ -1,0 +1,59 @@
+﻿@model IEnumerable<SaleViewModel>
+
+<h1>Sales</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Travelled Distance
+        </th>
+        <th>
+            Customer Name
+        </th>
+        <th>
+            Price
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Car.Make
+            </td>
+            <td>
+                @item.Car.Model
+            </td>
+            <td>
+                @item.Car.TravelledDistance
+            </td>
+            <td>
+                @item.Customer.Name
+            </td>
+            <td>
+                <ul>
+                    <li>
+                        Without Discount - @item.PriceWithoutDiscount
+                    </li>
+                    <li>
+                        With Discount - @Math.Round(Convert.ToDecimal(@item.PriceWithDiscount), 2)
+                    </li>
+                    <li>
+                        Discount - @item.Discount
+                    </li>
+                </ul>
+            </td>
+        </tr>
+    }
+    </tbody>
+
+</table>
+
+

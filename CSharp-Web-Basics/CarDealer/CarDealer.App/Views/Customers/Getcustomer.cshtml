@@ -1,0 +1,35 @@
+﻿@model CustomerViewModel
+   
+<h2>@ViewData["success"]</h2>
+<h1>Customer</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            Bouth Cars
+        </th>
+        <th>
+            Money Spent On Cars
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    
+        <tr>
+            <td>
+                @Model.Name
+            </td>
+            <td>
+                @Model.BouthCars
+            </td>
+            <td>
+                @Math.Round(Convert.ToDecimal(@Model.MoneySpent), 2)
+            </td>
+        </tr>
+   
+    </tbody>
+
+</table>

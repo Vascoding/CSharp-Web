@@ -1,0 +1,35 @@
+﻿@model IEnumerable<CarDealer.App.Models.Cars.CarViewModel>
+
+<h1>Car By Model</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Make
+        </th>
+        <th>
+            Model
+        </th>
+        <th>
+            Travelled Distance
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Make
+            </td>
+            <td>
+                @item.Model
+            </td>
+            <td>
+                @(item.TravelledDistance / 1000)
+            </td>
+        </tr>
+    }
+    </tbody>
+
+</table>

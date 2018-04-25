@@ -1,0 +1,9 @@
+﻿body {
+    background: #EEE;
+    font-size: 24pt;
+}
+span {
+    border: 1px #AAA;
+    border-radius: 6px;
+    background: #CCC;
+}

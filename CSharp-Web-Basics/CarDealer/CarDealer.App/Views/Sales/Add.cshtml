@@ -1,0 +1,35 @@
+﻿@model AddSaleViewModel
+
+<h2>@ViewData["error"]</h2>
+
+<h2>Add Sale</h2>
+
+<form method="get" action="/sales/finalize">
+    <label for="Customers">Customers</label>
+    <select name="CustomerId">
+        @foreach (var customer in Model.Customers)
+        {
+            <option value="@customer.Id">@customer.Name</option>
+        }
+    </select>
+    <br />
+    <label for="Cars">Cars</label>
+    <select name="CarId">
+        @foreach (var car in Model.Cars)
+        {
+            <option value="@car.Id">@car.Make @car.Model</option>
+        }
+    </select>
+    <br />
+    <label for="Discount">Discount</label>
+    <select name="Discount">
+        @for (int i = 0; i < 10; i++)
+        {
+            var percent = i * 10;
+            <option value="0.@i">@percent %</option>
+        }
+    </select>
+    
+    <br />
+    <input type="submit" value="Submit" class="btn-primary" />
+</form>

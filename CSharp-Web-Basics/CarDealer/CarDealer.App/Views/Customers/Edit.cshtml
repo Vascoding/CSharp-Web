@@ -1,0 +1,17 @@
+﻿@model AddCustomerViewModel
+
+
+<h2 class="text-success">@ViewData["success"]</h2>
+<h2 class="text-danger">@ViewData["error"]</h2>
+<br />
+<h1>Edit Customer</h1>
+
+<form method="post">
+    <label for="Name">Customers Name</label>
+    <input name="Name" type="text" id="Name" value="@Model.Name" />
+    <br />
+    <label for="Birthdate">Customers Birthdate</label>
+    <input name="BirthDate" type="date" id="Birthdate" value="@Model.BirthDate" />
+    <br />
+    <input type="submit" value="Edit Customer" />
+</form>

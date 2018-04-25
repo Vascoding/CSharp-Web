@@ -1,0 +1,35 @@
+﻿@model List<ListCustomersViewModel>
+ 
+<h1>Customers</h1>
+<table class="table">
+    <thead>
+    <tr>
+        <th>
+            Name
+        </th>
+        <th>
+            BirthDate
+        </th>
+        <th>
+            Is Younger Driver
+        </th>
+    </tr>
+    </thead>
+    <tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @item.Name
+            </td>
+            <td>
+                @item.BirthDate.ToShortDateString()
+            </td>
+            <td>
+                @(item.IsYoungDriver ? "Yes" : "No")
+            </td>
+        </tr>
+    }
+    </tbody>
+
+</table>

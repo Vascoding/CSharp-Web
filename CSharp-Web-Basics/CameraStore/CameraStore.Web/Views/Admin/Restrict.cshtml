@@ -1,0 +1,16 @@
+﻿@model UsersModel
+@{
+    ViewData["Title"] = "Restrict this user for posting new offers.";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form method="post" action="/admin/confirm/@Model.Id">
+    <div>
+        @Model.Email
+    </div>
+    <div>
+        <input class="btn btn-danger" type="submit"  value="Restrict"/>
+    </div>
+</form>
+

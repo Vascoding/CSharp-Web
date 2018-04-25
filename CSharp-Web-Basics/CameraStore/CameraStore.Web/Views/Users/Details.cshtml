@@ -1,0 +1,68 @@
+﻿@model UserDetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>User Details</h2>
+<div class="col-md-12">
+    <p>
+        <b>
+            Email: @Model.Email
+            @if (Model.IsSeller)
+            {
+                <a class="btn btn-primary" href="/manage/index">Edit Profile</a>
+            }
+        </b>
+
+    </p>
+    <p>
+        <b>
+            Phone number: @Model.Phone
+        </b>
+    </p>
+    <p>
+        <b>
+            Cameras: @Model.InStock in stock / @Model.OutOfStock out of stock
+        </b>
+    </p>
+</div>
+
+@if (Model.Cameras.Count() != 0)
+{
+    @foreach (var camera in Model.Cameras)
+    {
+        <div class="col-md-12 container table-bordered">
+            <img class="col-md-2" src="@camera.ImageUrl" width="60" />
+            <div class="col-md-2">
+                <div>@camera.Make</div>
+                <a href="/cameras/details/@camera.Id">Details</a>
+            </div>
+            <div class="col-md-2">@camera.Model</div>
+            <div class="col-md-3">
+                <p>$ @camera.Price</p>
+                
+                <br />
+                @if (camera.Quantity != 0)
+                {
+                    <h2 style="color:green">IN STOCK</h2>
+                }
+                else
+                {
+                    <h2 style="color:red">OUT OF STOCK</h2>
+                }
+                
+            </div>
+            @if (Model.IsSeller)
+            {
+                <div class="col-md-2">
+                    <a href="/cameras/edit/@camera.Id" class="btn btn-primary btn-block">Edit</a>
+                    <br />
+                    <a href="/cameras/delete/@camera.Id" class="btn btn-danger btn-block">Delete</a>
+                </div>
+            }
+        </div>
+    }
+}
+else
+{
+    <p>The user is not selling any cameras.Go to <a href="/">home page</a> to find more offers of other users.</p>
+}

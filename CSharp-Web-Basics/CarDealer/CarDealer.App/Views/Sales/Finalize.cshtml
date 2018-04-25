@@ -1,0 +1,25 @@
+﻿@model FinalizeViewModel
+
+<h2>Review Sale</h2>
+
+<form method="post" action="/sales/confirm">
+    <label for="Name">Customer:</label>
+    <input readonly name="Name" type="text" id="Name" value="@Model.CustomerName" />
+    <br />
+    <label for="Car">Car:</label>
+    <input readonly name="Car" id="Car" value="@Model.Car"/>
+    <br />
+    <label for="Discount">Discount:</label>
+    <input readonly name="Discount" id="Discount" value="@Model.Discount"/>
+    <br />
+    <label for="CarPrice">Car Price:</label>
+    <input readonly name="CarPrice" id="CarPrice" value="@Model.PriceWithoutDiscount" />
+    <br />
+    <label for="FinalPrice">Final Price</label>
+    <input readonly name="FinalPrice" id="FinalPrice" value="@Model.PriceWithDiscount" />
+    <input type="hidden" name="CarId" value="@Model.CarId" />
+    <input type="hidden" name="CustomerId" value="@Model.CustomerId"/>
+    <br />
+    <a class="btn btn-default" href="/sales/add">Cancel</a>
+    <input type="submit" value="Finalize" class="btn-primary" />
+</form>

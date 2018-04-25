@@ -1,0 +1,36 @@
+﻿@model IEnumerable<PartViewModel>
+
+<h1>Parts</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Name
+            </th>
+            <th>
+                Price
+            </th>
+            <th>
+                Action
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Name
+                </td>
+                <td>
+                    @item.Price
+                </td>
+                <td>
+                    <a class=" btn btn-warning" href="/parts/edit/@item.Id">Edit</a>
+                    <a class=" btn btn-danger" href="/parts/delete/@item.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

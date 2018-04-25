@@ -1,0 +1,23 @@
+﻿@model RegisterViewModel
+
+
+<h2 class="text-danger">@ViewData["error"]</h2>
+<br />
+<h1>Register</h1>
+
+<form method="post">
+    <label for="Username">Username</label>
+    <input name="Username" type="text" id="Username" />
+    <br />
+    <label for="Email">Email</label>
+    <input type="text"  name="Email" id="Email" />
+    <br />
+    <label for="Password">Password</label>
+    <input type="password" name="Password" id="Password" />
+    <br />
+    <label for="ConfirmPassword">Confirm Password</label>
+    <input type="password" name="ConfirmPassword" id="ConfirmPassword" />
+    <br />
+    <input type="submit" value="Register" />
+    <br />
+</form>

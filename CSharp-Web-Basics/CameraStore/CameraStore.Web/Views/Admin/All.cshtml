@@ -1,0 +1,30 @@
+﻿@model IEnumerable<UsersModel>
+@{
+    ViewData["Title"] = "All Users";
+}
+<h2>@ViewData["Title"]</h2>
+
+<div class="alert-success">
+    @TempData["success"]
+</div>
+<hr />
+<table class="table">
+    <tr>
+        <th>User Email</th>
+        <th>Is User Restricted</th>
+        <th>Options</th>
+    </tr>
+    @foreach (var user in Model)
+    {
+        <tr>
+            <th>@user.Email</th>
+            <th>
+                @user.IsRestricted
+            </th>
+            <th>
+                <a class="btn btn-danger" href="/admin/restrict/@user.Id">Restrict</a>
+                <a class="btn btn-default" href="/admin/destrict/@user.Id">Destrict</a>
+            </th>
+        </tr>
+    }
+</table>

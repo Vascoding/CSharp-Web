@@ -1,0 +1,28 @@
+﻿@model IEnumerable<SupplierViewModel>
+
+<h2 class="text-success">@ViewData["success"]</h2>
+<h2 class="text-danger">@ViewData["error"]</h2>
+<br />
+<h1>Add Part</h1>
+
+<form method="post">
+    <label for="Name">Part Name</label>
+    <input name="Name" type="text" id="Name" />
+    <br />
+    <label for="Price">Price</label>
+    <input type="number" name="Price" id="Price" min="0.00" step="1.00"/>
+    <br />
+    <label for="Quantity">Quantity</label>
+    <input type="number" name="Quantity" id="Quantity" min="1" value="1" />
+    <br />
+    <input type="submit" value="Add Part" />
+    <br />
+    <p>Select Supplier</p>
+
+    @foreach (var supplier in @Model)
+    {
+        <input type="radio" name="SupplierId" value="@supplier.Id" />
+        <span>@supplier.Name</span>
+        <br />
+    }
+</form>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<CarWithPartsViewModel>
+
+
+<h1>Cars With Parts</h1>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                Make
+            </th>
+            <th>
+                Model
+            </th>
+            <th>
+                Travelled Distance
+            </th>
+            <th>
+                Parts
+            </th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @item.Make
+                </td>
+                <td>
+                    @item.Model
+                </td>
+                <td>
+                    @(item.TravelledDistance / 1000)
+                </td>
+                <td>
+                    <ul>
+                        @foreach (var part in item.Parts)
+                        {
+                            <li>
+                                @part.Name  |  Price @part.Price $
+                            </li>
+                        }
+                    </ul>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

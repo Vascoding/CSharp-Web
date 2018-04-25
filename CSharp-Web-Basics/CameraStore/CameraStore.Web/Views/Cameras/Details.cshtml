@@ -1,0 +1,78 @@
+﻿@model CameraDetailsModel
+@{
+    ViewData["Title"] = "Details";
+}
+<h2>Camera Details</h2>
+<div class="col-md-12 container table-bordered">
+
+    <div class="col-md-3">
+        <div>@Model.Make</div>
+    </div>
+    <div class="col-md-3">@Model.Model</div>
+    <div class="col-md-3">$ @Model.Price</div>
+    <div class="col-md-3">
+        @if (Model.Quantity != 0)
+            {
+            <h2 style="color:green">IN STOCK</h2>
+        }
+        else
+        {
+            <h2 style="color:red">OUT OF STOCK</h2>
+        }
+    </div>
+    
+    <div class="col-md-3">
+        <a href="/users/details/@Model.SellerId">@Model.SellerUsername</a>
+        <br />
+        <img src="@Model.ImageUrl" width="160" />
+        <br />
+        <p>
+            <b>
+                Is Full Frame:
+                @if (Model.IsFullFrame == true)
+                {
+                    <b>Yes</b>
+                }
+                else
+                {
+                    <b>No</b>
+                }
+            </b>
+        </p>
+        <p>
+            <b>
+                Min Shutter Speed: @Model.MinShutterSpeed
+            </b>
+        </p>
+        <p>
+            <b>
+                Max Shutter Speed: @Model.MaxShutterSpeed
+            </b>
+        </p>
+        <p>
+            <b>
+                Min ISO: @Model.MinIso
+            </b>
+        </p>
+        <p>
+            <b>
+                Max ISO: @Model.MaxIso
+            </b>
+        </p>
+        <p>
+            <b>
+                Video Resolution: @Model.VideoResolution
+            </b>
+        </p>
+        <p>
+            <b>
+                Light Matering : @string.Join(", ", Model.LightMatering)
+            </b>
+        </p>
+        <p>
+            <b>
+                Description: @Model.Description
+            </b>
+        </p>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+﻿
+@model IEnumerable<PartViewModel>
+
+<h2>@ViewData["error"]</h2>
+
+<h2>Add Car</h2>
+
+<form method="post">
+    <label for="Make">Make</label>
+    <input name="Make" type="text" id="Make" />
+    <br />
+    <label for="Model">Model</label>
+    <input name="CarModel" type="text" id="Model" />
+    <br />
+    <label for="TravelledDistance">Travelled Distance</label>
+    <input name="TravelledDistance" type="number" id="TravelledDistance" />
+    <br />
+    <br />
+    <input type="submit" value="Add Car" />
+    <br />
+    <br />
+    <p>Select Parts</p>
+
+    @foreach (var part in @Model)
+    {
+        <input type="checkbox" name="PartNames" value="@part.Name" />
+            <span>@part.Name</span>
+            <br />
+    }
+</form>
